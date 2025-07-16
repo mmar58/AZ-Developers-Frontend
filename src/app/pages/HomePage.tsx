@@ -36,8 +36,16 @@ const HomePage: React.FC = () => {
               <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
                   We are AZ Developers, a passionate team building high-performance games and web applications that engage and inspire.
               </p>
-              <a href="#projects" className="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform duration-300 hover:scale-105 shadow-lg">
-                  View Our Work
+              <a
+                href="#projects"
+                onClick={e => {
+                  e.preventDefault();
+                  const el = document.getElementById('projects');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform duration-300 hover:scale-105 shadow-lg"
+              >
+                View Our Work
               </a>
           </div>
       </section>

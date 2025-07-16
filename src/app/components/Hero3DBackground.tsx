@@ -144,103 +144,17 @@ const Hero3DBackground: React.FC = () => {
       checkerFloor.position.y = -2.48;
       scene.add(checkerFloor);
 
-      // --- Animated background elements ---
-      // Sun (glowing yellow sphere with rays)
-      const sunGeometry = new THREE.SphereGeometry(1.2, 32, 32);
-      const sunGlowMaterial = new THREE.ShaderMaterial({
-        uniforms: {
-          color: { value: new THREE.Color(0xfff066) },
-          glowColor: { value: new THREE.Color(0xffeb99) }
-        },
-        vertexShader: `
-          varying vec3 vNormal;
-          void main() {
-            vNormal = normalize(normalMatrix * normal);
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
-        fragmentShader: `
-          uniform vec3 color;
-          uniform vec3 glowColor;
-          varying vec3 vNormal;
-          void main() {
-            float intensity = pow(0.7 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.0);
-            gl_FragColor = vec4(mix(color, glowColor, intensity), 1.0);
-          }
-        `,
-        transparent: true,
-        opacity: 0
-      });
-      const sun = new THREE.Mesh(sunGeometry, sunGlowMaterial);
-      sun.position.set(4, 5, -8);
-      scene.add(sun);
-
-      // Add sun rays
-      const sunRaysGeometry = new THREE.CircleGeometry(2.5, 32);
-      const sunRaysMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffeb99,
-        transparent: true,
-        opacity: 0,
-        side: THREE.DoubleSide,
-      });
-      const sunRays = new THREE.Mesh(sunRaysGeometry, sunRaysMaterial);
-      sunRays.position.copy(sun.position);
-      scene.add(sunRays);
-
-      // Moon (glowing blue/white sphere with halo)
-      const moonGeometry = new THREE.SphereGeometry(0.8, 32, 32);
-      const moonGlowMaterial = new THREE.ShaderMaterial({
-        uniforms: {
-          color: { value: new THREE.Color(0xbad6ff) },
-          glowColor: { value: new THREE.Color(0xffffff) }
-        },
-        vertexShader: `
-          varying vec3 vNormal;
-          void main() {
-            vNormal = normalize(normalMatrix * normal);
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
-        fragmentShader: `
-          uniform vec3 color;
-          uniform vec3 glowColor;
-          varying vec3 vNormal;
-          void main() {
-            float intensity = pow(0.7 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.0);
-            gl_FragColor = vec4(mix(color, glowColor, intensity), 1.0);
-          }
-        `,
-        transparent: true,
-        opacity: 0
-      });
-      const moon = new THREE.Mesh(moonGeometry, moonGlowMaterial);
-      moon.position.set(-4, 5, -8);
-      scene.add(moon);
-
-      // Moon halo
-      const moonHaloGeometry = new THREE.RingGeometry(1.2, 2.0, 32);
-      const moonHaloMaterial = new THREE.MeshBasicMaterial({
-        color: 0x4a6fa5,
-        transparent: true,
-        opacity: 0,
-        side: THREE.DoubleSide,
-      });
-      const moonHalo = new THREE.Mesh(moonHaloGeometry, moonHaloMaterial);
-      moonHalo.position.copy(moon.position);
-      scene.add(moonHalo);
-
-
-      // Rain (dense group of animated lines)
+      // Rain (group of animated lines)
       const rainGroup = new THREE.Group();
       const rainDrops: THREE.Mesh[] = [];
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 150; i++) {
         const dropGeometry = new THREE.CylinderGeometry(0.015, 0.015, 0.8, 6);
-        const dropMaterial = new THREE.MeshStandardMaterial({ 
-          color: 0x38bdf8, 
-          transparent: true, 
-          opacity: 0,
+        const dropMaterial = new THREE.MeshStandardMaterial({
+          color: 0x38bdf8,
           emissive: 0x38bdf8,
-          emissiveIntensity: 0.5
+          emissiveIntensity: 0.3,
+          transparent: true,
+          opacity: 0,
         });
         const drop = new THREE.Mesh(dropGeometry, dropMaterial);
         drop.position.set(
@@ -252,6 +166,38 @@ const Hero3DBackground: React.FC = () => {
         rainDrops.push(drop);
       }
       scene.add(rainGroup);
+      rainGroup.visible = false;
+
+      // Light Rays effect
+      const lightRaysGroup = new THREE.Group();
+      for (let i = 0; i < 8; i++) {
+        const rayGeometry = new THREE.PlaneGeometry(0.1, 15);
+        const rayMaterial = new THREE.MeshBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0,
+          blending: THREE.AdditiveBlending,
+        });
+        const ray = new THREE.Mesh(rayGeometry, rayMaterial);
+        ray.position.z = -5;
+        ray.rotation.z = (i / 8) * Math.PI * 2;
+        lightRaysGroup.add(ray);
+      }
+      lightRaysGroup.position.set(-2, 2, -3);
+      lightRaysGroup.rotation.x = Math.PI / 6;
+      scene.add(lightRaysGroup);
+
+      // Add a glow sphere at the source of light rays
+      const glowGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+      const glowMaterial = new THREE.MeshBasicMaterial({
+        color: 0xffffcc,
+        transparent: true,
+        opacity: 0,
+        blending: THREE.AdditiveBlending,
+      });
+      const glowSphere = new THREE.Mesh(glowGeometry, glowMaterial);
+      glowSphere.position.copy(lightRaysGroup.position);
+      scene.add(glowSphere);
 
       // Animation loop
       let t = 0;
@@ -275,10 +221,10 @@ const Hero3DBackground: React.FC = () => {
 
         // Animate floors: cycle through types and colors
         const floorCycle = (t / 6) % 3; // 0-1: solid, 1-2: grid, 2-3: checker
+        
         // Animate solid color floor
         const floorMat = floor.material as THREE.MeshStandardMaterial;
         if (floorCycle < 1) {
-          // Solid color floor visible
           floorMat.opacity = Math.sin(t * 0.5) * 0.15 + 0.25;
           const hueFloor = (t * 8) % 360;
           floorMat.emissive.setHSL(hueFloor / 360, 0.7, 0.5);
@@ -286,6 +232,7 @@ const Hero3DBackground: React.FC = () => {
         } else {
           floorMat.opacity = 0;
         }
+
         // Animate grid floor
         if (floorCycle >= 1 && floorCycle < 2) {
           gridHelper.material.opacity = Math.abs(Math.sin(t * 0.7)) * 0.4 + 0.3;
@@ -293,6 +240,7 @@ const Hero3DBackground: React.FC = () => {
         } else {
           gridHelper.material.opacity = 0;
         }
+
         // Animate checkerboard floor
         if (floorCycle >= 2) {
           checkerMaterial.opacity = Math.abs(Math.sin(t * 0.8)) * 0.4 + 0.3;
@@ -302,32 +250,37 @@ const Hero3DBackground: React.FC = () => {
           checkerMaterial.opacity = 0;
         }
 
-        // Animate background: sun, moon, rain
-        // Sun: appears with solid floor
-        if (floorCycle < 1) {
-          (sun.material as THREE.ShaderMaterial).uniforms.glowColor.value.setHSL(0.1, 1, 0.8);
-          sunRaysMaterial.opacity = Math.min(1, (1 - Math.abs(floorCycle - 0.5) * 2) * 1.2);
-        } else {
-          sunRaysMaterial.opacity = 0;
-        }
-        // Moon: appears with checkerboard floor
-        if (floorCycle >= 2) {
-          (moon.material as THREE.ShaderMaterial).uniforms.glowColor.value.setHSL(0.6, 0.3, 0.9);
-          moonHaloMaterial.opacity = Math.min(1, (1 - Math.abs(floorCycle - 2.5) * 2) * 1.2);
-        } else {
-          moonHaloMaterial.opacity = 0;
-        }
-        // Rain: appears with grid floor
+        // Animate rain
         if (floorCycle >= 1 && floorCycle < 2) {
           rainGroup.visible = true;
           rainDrops.forEach((drop, i) => {
-            const mat = drop.material as THREE.MeshBasicMaterial;
+            const mat = drop.material as THREE.MeshStandardMaterial;
             mat.opacity = 0.5 + 0.5 * Math.abs(Math.sin(t + i));
             drop.position.y -= 0.12 + Math.random() * 0.04;
-            if (drop.position.y < -1.5) drop.position.y = 5.5 + Math.random() * 1.5;
+            if (drop.position.y < -1.5) {
+              drop.position.y = 5.5 + Math.random() * 1.5;
+            }
           });
         } else {
           rainGroup.visible = false;
+        }
+
+        // Animate light rays
+        if (floorCycle < 1 || floorCycle >= 2) { // Show during solid and checker floor phases
+          lightRaysGroup.children.forEach((ray, i) => {
+            const rayMesh = ray as THREE.Mesh;
+            const rayMat = rayMesh.material as THREE.MeshBasicMaterial;
+            rayMat.opacity = 0.15 + 0.1 * Math.sin(t * 2 + i);
+            rayMesh.rotation.z += 0.001 + Math.sin(t + i) * 0.001;
+          });
+          glowMaterial.opacity = 0.7 + 0.3 * Math.sin(t * 3);
+          lightRaysGroup.rotation.y = Math.sin(t * 0.2) * 0.2;
+        } else {
+          lightRaysGroup.children.forEach(ray => {
+            const rayMesh = ray as THREE.Mesh;
+            (rayMesh.material as THREE.MeshBasicMaterial).opacity = 0;
+          });
+          glowMaterial.opacity = 0;
         }
 
         renderer!.render(scene, camera);
