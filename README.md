@@ -24,8 +24,10 @@ This project uses `next/font` to automatically optimize and load [Geist](https:/
 
 # About AZ Developers
 
-We are a group of dedicated game and web developers. We developer our own games and can also developer for you.
+We are a group of dedicated game and web developers. We develope our own games, websites and can also develope for you.
 
 ## Contact
 
-**Email**: 
+**Email**: azofficekhulna@gmail.com
+
+whatsapp: +8801619411488
