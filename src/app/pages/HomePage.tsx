@@ -1,10 +1,10 @@
-
 "use client"
 import React, { useState, useMemo } from 'react';
 import { ProjectCategory } from '../types';
 import { PROJECTS, TEAM_MEMBERS, PROCESS_STEPS } from '../constants';
 import ProjectCard from '../components/ProjectCard';
 import TeamMemberCard from '../components/TeamMemberCard';
+import Hero3DBackground from '../components/Hero3DBackground';
 
 const HomePage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>(ProjectCategory.ALL);
@@ -26,6 +26,7 @@ const HomePage: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+          <Hero3DBackground />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900/40 to-slate-900 z-0"></div>
           <div className="absolute inset-0 bg-grid-slate-800/[0.2] [mask-image:linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,1))] z-10"></div>
           <div className="relative z-20">
