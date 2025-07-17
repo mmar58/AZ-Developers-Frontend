@@ -1,0 +1,203 @@
+/* ZeroPointEnergyHero Animations */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.letter {
+  display: inline-block;
+  transform-origin: center bottom;
+  transition: all 0.1s ease;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+}
+
+.letter:hover {
+  animation: quantum-string-vibration 0.3s ease-in-out infinite;
+}
+
+@keyframes quantum-string-vibration {
+  0% {
+    transform: translateY(0) scaleY(1) skewX(0deg);
+    filter: brightness(1);
+  }
+  10% {
+    transform: translateY(-2px) scaleY(2.5) skewX(5deg);
+    filter: brightness(1.3) saturate(1.5);
+  }
+  20% {
+    transform: translateY(-1px) scaleY(3) skewX(-8deg);
+    filter: brightness(1.5) saturate(1.8);
+  }
+  30% {
+    transform: translateY(-3px) scaleY(2.8) skewX(12deg);
+    filter: brightness(1.2) saturate(1.3);
+  }
+  40% {
+    transform: translateY(0) scaleY(3.2) skewX(-6deg);
+    filter: brightness(1.6) saturate(2);
+  }
+  50% {
+    transform: translateY(-2px) scaleY(2.9) skewX(9deg);
+    filter: brightness(1.4) saturate(1.7);
+  }
+  60% {
+    transform: translateY(-1px) scaleY(3.1) skewX(-11deg);
+    filter: brightness(1.3) saturate(1.6);
+  }
+  70% {
+    transform: translateY(-3px) scaleY(2.7) skewX(7deg);
+    filter: brightness(1.5) saturate(1.9);
+  }
+  80% {
+    transform: translateY(0) scaleY(3) skewX(-5deg);
+    filter: brightness(1.2) saturate(1.4);
+  }
+  90% {
+    transform: translateY(-1px) scaleY(2.8) skewX(10deg);
+    filter: brightness(1.4) saturate(1.6);
+  }
+  100% {
+    transform: translateY(0) scaleY(1) skewX(0deg);
+    filter: brightness(1);
+  }
+}
+
+/* Quantum string resonance effect */
+@keyframes string-resonance {
+  0% {
+    transform: scaleY(1) skewX(0deg);
+    text-shadow: 0 0 5px currentColor;
+  }
+  25% {
+    transform: scaleY(2.5) skewX(8deg);
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  }
+  50% {
+    transform: scaleY(3.2) skewX(-12deg);
+    text-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+  }
+  75% {
+    transform: scaleY(2.8) skewX(15deg);
+    text-shadow: 0 0 25px #ffff00, 0 0 50px #ffff00;
+  }
+  100% {
+    transform: scaleY(1) skewX(0deg);
+    text-shadow: 0 0 5px currentColor;
+  }
+}
+
+/* Individual letter quantum field animation */
+.letter.quantum-active {
+  animation: string-resonance 0.1s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+/* Stagger the quantum animations for each letter */
+.letter:nth-child(1) { animation-delay: 0ms; }
+.letter:nth-child(2) { animation-delay: 50ms; }
+.letter:nth-child(3) { animation-delay: 100ms; }
+.letter:nth-child(4) { animation-delay: 150ms; }
+.letter:nth-child(5) { animation-delay: 200ms; }
+.letter:nth-child(6) { animation-delay: 250ms; }
+.letter:nth-child(7) { animation-delay: 300ms; }
+.letter:nth-child(8) { animation-delay: 350ms; }
+.letter:nth-child(9) { animation-delay: 400ms; }
+.letter:nth-child(10) { animation-delay: 450ms; }
+.letter:nth-child(11) { animation-delay: 500ms; }
+.letter:nth-child(12) { animation-delay: 550ms; }
+.letter:nth-child(13) { animation-delay: 600ms; }
+.letter:nth-child(14) { animation-delay: 650ms; }
+.letter:nth-child(15) { animation-delay: 700ms; }
+.letter:nth-child(16) { animation-delay: 750ms; }
+.letter:nth-child(17) { animation-delay: 800ms; }
+.letter:nth-child(18) { animation-delay: 850ms; }
+.letter:nth-child(19) { animation-delay: 900ms; }
+.letter:nth-child(20) { animation-delay: 950ms; }
+
+.energy-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #00ffff 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-particle 4s ease-in-out infinite;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-5px) scale(0.8);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-20px) translateX(-10px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+.infinity-glow {
+  filter: drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 40px #ff00ff);
+  animation: infinity-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes infinity-pulse {
+  0% {
+    filter: drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 40px #ff00ff);
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 30px #00ffff) drop-shadow(0 0 60px #ff00ff);
+    transform: scale(1.05);
+  }
+}
+
+.grid-animation {
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 10s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .letter {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+  
+  .energy-particle {
+    display: none; /* Hide particles on mobile for performance */
+  }
+  
+  .infinity-glow {
+    filter: none; /* Reduce effects on mobile */
+  }
+}
