@@ -4,14 +4,14 @@ A modern, interactive portfolio website showcasing the capabilities of AZ Develo
 
 ## ✨ Features
 
-- **🎮 3D Interactive Backgrounds**: Immersive Hero sections with Three.js animations
-- **⚡ Zero Point Energy Lab**: Quantum field animations with GSAP
-- **🌧️ Dynamic Weather Effects**: Rain, light rays, and animated floor transitions
-- **📱 Fully Responsive**: Optimized for all devices and screen sizes
-- **🎯 Smooth Animations**: GSAP-powered transitions and micro-interactions
-- **🔥 Modern UI/UX**: Clean, professional design with Tailwind CSS
-- **⚡ Performance Optimized**: SSR-friendly with hydration considerations
-- **🎨 Reusable Components**: Modular architecture for easy customization
+* **🎮 3D Interactive Backgrounds**: Immersive Hero sections with Three.js animations
+* **⚡ Zero Point Energy Lab**: Quantum field animations with GSAP
+* **🌧️ Dynamic Weather Effects**: Rain, light rays, and animated floor transitions
+* **📱 Fully Responsive**: Optimized for all devices and screen sizes
+* **🎯 Smooth Animations**: GSAP-powered transitions and micro-interactions
+* **🔥 Modern UI/UX**: Clean, professional design with Tailwind CSS
+* **⚡ Performance Optimized**: SSR-friendly with hydration considerations
+* **🎨 Reusable Components**: Modular architecture for easy customization
 
 ## 🚀 Live Demo
 
@@ -19,22 +19,22 @@ Visit our live website: [AZ Developers](https://azdevelopers.unaux.com/)
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: Next.js 15 with App Router
-- **UI Library**: React 19
-- **Styling**: Tailwind CSS 4
-- **3D Graphics**: Three.js
-- **Animations**: GSAP (GreenSock Animation Platform)
-- **UI Components**: Radix UI primitives
-- **Icons**: Lucide React
-- **Language**: TypeScript
-- **Deployment**: Vercel-ready
+* **Frontend Framework**: Next.js 15 with App Router
+* **UI Library**: React 19
+* **Styling**: Tailwind CSS 4
+* **3D Graphics**: Three.js
+* **Animations**: GSAP (GreenSock Animation Platform)
+* **UI Components**: Radix UI primitives
+* **Icons**: Lucide React
+* **Language**: TypeScript
+* **Deployment**: Vercel-ready
 
 ## 🎯 Services We Offer
 
-- **Unity Game Development**: High-performance 2D/3D games for all platforms
-- **Web Game Development**: Browser-based games with modern web technologies
-- **Web App Development**: Robust, scalable applications tailored to your needs
-- **Responsive Websites**: Beautiful, mobile-friendly sites for every device
+* **Unity Game Development**: High-performance 2D/3D games for all platforms
+* **Web Game Development**: Browser-based games with modern web technologies
+* **Web App Development**: Robust, scalable applications tailored to your needs
+* **Responsive Websites**: Beautiful, mobile-friendly sites for every device
 
 ## 📁 Project Structure
 
@@ -60,18 +60,22 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm, yarn, pnpm, or bun
+* Node.js 18+
+* npm, yarn, pnpm, or bun
 
 ### Installation
 
+
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/mmar58/AZ-Developers-Frontend.git
 cd AZ-Developers-Frontend
 ```
 
+
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -82,7 +86,9 @@ pnpm install
 bun install
 ```
 
+
 3. Start the development server:
+
 ```bash
 npm run dev
 # or
@@ -93,7 +99,8 @@ pnpm dev
 bun dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+4. Open <http://localhost:3000> with your browser to see the result.
 
 ### Build for Production
 
@@ -106,36 +113,33 @@ npm run start
 
 This project is designed with reusable components and can be easily customized:
 
-- **Colors**: Modify the color scheme in `tailwind.config.js`
-- **Content**: Update data in `src/app/constants.tsx`
-- **Components**: All components are modular and can be easily modified
-- **3D Effects**: Customize animations in `Hero3DBackground.tsx`
+* **Colors**: Modify the color scheme in `tailwind.config.js`
+* **Content**: Update data in `src/app/constants.tsx`
+* **Components**: All components are modular and can be easily modified
+* **3D Effects**: Customize animations in `Hero3DBackground.tsx`
 
 ## 🌟 Key Components
 
 ### Hero3DBackground
-- Interactive 3D scene with Three.js
-- Animated floors with different materials
-- Dynamic weather effects (rain, light rays)
-- Responsive performance optimization
 
-### Zero Point Energy Lab
-- Quantum field visualization
-- String theory animations with GSAP
-- Energy transformation effects
-- Infinity symbol morphing
+* Interactive 3D scene with Three.js
+* Animated floors with different materials
+* Dynamic weather effects (rain, light rays)
+* Responsive performance optimization
 
 ### Project Portfolio
-- Filterable project categories
-- Interactive project cards
-- Smooth animations and transitions
+
+* Filterable project categories
+* Interactive project cards
+* Smooth animations and transitions
 
 ## 📞 Contact & Support
 
 **AZ Developers Team**
-- **Email**: azofficekhulna@gmail.com
-- **WhatsApp**: +8801619411488
-- **Website**: [azdevelopers.unaux.com](https://azdevelopers.unaux.com/)
+
+* **Email**: azofficekhulna@gmail.com
+* **WhatsApp**: +8801619411488
+* **Website**: [azdevelopers.unaux.com](https://azdevelopers.unaux.com/)
 
 ## 📄 License
 
@@ -144,17 +148,19 @@ This project is open source and available under the [MIT License](LICENSE). Feel
 ## 🤝 Contributing
 
 We welcome contributions! Feel free to:
-- Report bugs
-- Suggest new features
-- Submit pull requests
-- Improve documentation
+
+* Report bugs
+* Suggest new features
+* Submit pull requests
+* Improve documentation
 
 ## 🙏 Acknowledgments
 
-- Built with modern web technologies
-- Inspired by cutting-edge design trends
-- Optimized for performance and accessibility
-- Designed for the developer community
+* Built with modern web technologies
+* Inspired by cutting-edge design trends
+* Optimized for performance and accessibility
+* Designed for the developer community
+
 
 ---
 
