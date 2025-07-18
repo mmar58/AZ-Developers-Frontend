@@ -50,6 +50,62 @@ const HomePage: React.FC = () => {
           </div>
       </section>
 
+      {/* We Offer Section */}
+      <section className="py-20 md:py-32 bg-slate-900/80">
+        <div className="container mx-auto px-6">
+          <SectionTitle>We Offer</SectionTitle>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Unity Game Development",
+                icon: (
+                  <svg className="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l7 4v6c0 5-7 10-7 10S5 17 5 12V6l7-4z" />
+                  </svg>
+                ),
+                desc: "High-performance 2D/3D games using Unity for all platforms."
+              },
+              {
+                title: "Web Game Development",
+                icon: (
+                  <svg className="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h8M12 8v8" />
+                  </svg>
+                ),
+                desc: "Engaging browser-based games with modern web tech."
+              },
+              {
+                title: "Web App Development",
+                icon: (
+                  <svg className="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 2v4M16 2v4M2 8h20" />
+                  </svg>
+                ),
+                desc: "Robust, scalable web applications tailored to your needs."
+              },
+              {
+                title: "Responsive Websites",
+                icon: (
+                  <svg className="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 2v4M16 2v4M2 8h20" />
+                  </svg>
+                ),
+                desc: "Beautiful, mobile-friendly websites for every device."
+              }
+            ].map((service, idx) => (
+              <div key={idx} className="bg-slate-800/80 rounded-lg p-8 text-center shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-2">
+                <div>{service.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-slate-400">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-20 md:py-32 bg-slate-900">
           <div className="container mx-auto px-6">
