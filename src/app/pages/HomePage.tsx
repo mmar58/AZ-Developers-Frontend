@@ -1,5 +1,7 @@
 "use client"
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import ContactModal from '../components/Modal/ContactModal';
+import Toast, { ToastState } from '../components/Modal/Toast';
 import { ProjectCategory } from '../types';
 import { PROJECTS, TEAM_MEMBERS, PROCESS_STEPS } from '../constants';
 import ProjectCard from '../components/ProjectCard';
@@ -8,6 +10,15 @@ import Hero3DBackground from '../components/Hero3DBackground';
 
 const HomePage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>(ProjectCategory.ALL);
+  const [isContactOpen, setIsContactOpen] = useState(false); // Modal state
+  const [toast, setToast] = useState<ToastState>({ show: false, message: '', type: 'info' }); // Toast state
+
+  useEffect(() => {
+    // Listen for custom event from header nav
+    const handler = () => setIsContactOpen(true);
+    window.addEventListener('openContactModal', handler);
+    return () => window.removeEventListener('openContactModal', handler);
+  }, []);
 
   const filteredProjects = useMemo(() => {
     if (activeCategory === ProjectCategory.ALL) {
@@ -24,6 +35,10 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+      {/* Toast Notification */}
+      <Toast toast={toast} onClose={() => setToast(t => ({ ...t, show: false }))} />
+      {/* Contact Modal */}
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} setToast={setToast} />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
           <Hero3DBackground />

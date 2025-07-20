@@ -28,6 +28,19 @@ const Header: React.FC = () => {
               {link.name}
             </Link>
           ))}
+          {/* Contact Us button styled as nav link */}
+          <button
+            type="button"
+            className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium bg-transparent border-none cursor-pointer"
+            onClick={() => {
+              // TODO: Replace with your contact modal trigger or handler
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('openContactModal'));
+              }
+            }}
+          >
+            Contact Us
+          </button>
         </nav>
         <button 
           className="md:hidden text-slate-300 focus:outline-none" 
@@ -60,6 +73,19 @@ const Header: React.FC = () => {
                     {link.name}
                 </Link>
             ))}
+            {/* Contact Us button styled as mobile nav link */}
+            <button
+              type="button"
+              className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 font-medium bg-transparent border-none cursor-pointer py-3 text-left"
+              onClick={() => {
+                // TODO: Replace with your contact modal trigger or handler
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('openContactModal'));
+                }
+              }}
+            >
+              Contact Us
+            </button>
         </nav>
       </div>
     </header>

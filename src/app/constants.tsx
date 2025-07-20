@@ -6,8 +6,7 @@ export const NAV_LINKS = [
   { name: 'Projects', href: '/projects' },
   { name: 'Games', href: '/games' },
   { name: 'Process', href: '/#process' },
-  { name: 'Team', href: '/team' },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'Team', href: '/team' }
 ];
 
 export const PROJECTS: Project[] = [
