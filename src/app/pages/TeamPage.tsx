@@ -7,7 +7,7 @@ const TeamPage: React.FC = () => {
   return (
     <section className="py-20 md:py-32 bg-slate-900 min-h-screen pt-32">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">Our Experts</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4 tracking-tight">Our Experts</h2>
         <p className="text-lg text-slate-400 text-center max-w-3xl mx-auto mb-16">
           Meet the talented individuals who power AZ Developers. Our diverse team of developers, designers, and strategists are the driving force behind our success.
         </p>
