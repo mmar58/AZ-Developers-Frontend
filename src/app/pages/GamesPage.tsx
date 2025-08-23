@@ -28,6 +28,7 @@ const GamesPage: React.FC = () => {
 
   return (
     <>
+      {/* Toast + Contact Modal mounted at page root so they overlay all content */}
       <Toast toast={toast} onClose={() => setToast(t => ({ ...t, show: false }))} />
       <ContactModal
         isOpen={isContactOpen}

@@ -25,7 +25,7 @@ const ProjectsPage: React.FC = () => {
       />
 
       <div className="max-w-5xl mx-auto py-10 px-4">
-        <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight text-center mt-6 mb-8">
+        <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight text-center mt-20 mb-10">
           Our Projects
         </h3>
 
