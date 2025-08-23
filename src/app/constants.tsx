@@ -40,6 +40,7 @@ export const PROJECTS: Project[] = [
     description: 'A story-driven role-playing game with a rich world and complex characters, developed in Unity.',
     category: ProjectCategory.UNITY,
     imageUrl: 'https://picsum.photos/seed/mystic/600/400',
+    demoUrl: '#',
   },
   {
     id: 5,
@@ -55,6 +56,7 @@ export const PROJECTS: Project[] = [
     description: 'A powerful data visualization dashboard that transforms complex datasets into insightful charts.',
     category: ProjectCategory.WEB_APPS,
     imageUrl: 'https://picsum.photos/seed/dataviz/600/400',
+    demoUrl: '#',
   },
   {
     id: 7,
@@ -62,6 +64,7 @@ export const PROJECTS: Project[] = [
     description: 'An immersive virtual reality puzzle game. Work together with friends to solve challenges and escape.',
     category: ProjectCategory.UNITY,
     imageUrl: 'https://picsum.photos/seed/vr/600/400',
+    demoUrl: '#',
   },
   {
     id: 8,
@@ -78,6 +81,7 @@ export const PROJECTS: Project[] = [
     category: ProjectCategory.WEB_GAMES,
     imageUrl: 'https://picsum.photos/seed/tictactoe/600/400',
     demoUrl: '/games/tic-tac-toe',
+    demoUrl: '#',
   },
   {
     id: 9,
