@@ -11,6 +11,7 @@ export async function generateStaticParams() {
 }
 
 // Server component that passes to client component
-export default function ProfilePage({ params }: { params: { username: string } }) {
-  return <ProfilePageClient username={params.username} />;
+export default async function ProfilePage({ params }: { params: Promise<{ username: string }> }) {
+  const { username } = await params;
+  return <ProfilePageClient username={username} />;
 }
