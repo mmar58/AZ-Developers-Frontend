@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useMemo, useEffect } from 'react';
+import Link from 'next/link';
 import ContactModal from '../components/Modal/ContactModal';
 import Toast, { ToastState } from '../components/Modal/Toast';
 import { ProjectCategory } from '../types';
@@ -78,7 +79,8 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l7 4v6c0 5-7 10-7 10S5 17 5 12V6l7-4z" />
                   </svg>
                 ),
-                desc: "High-performance 2D/3D games using Unity for all platforms."
+                desc: "High-performance 2D/3D games using Unity for all platforms.",
+                href: "/offers/unity-game-development"
               },
               {
                 title: "Web Game Development",
@@ -88,7 +90,8 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h8M12 8v8" />
                   </svg>
                 ),
-                desc: "Engaging browser-based games with modern web tech."
+                desc: "Engaging browser-based games with modern web tech.",
+                href: "/offers/web-game-development"
               },
               {
                 title: "Web App Development",
@@ -98,7 +101,8 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 2v4M16 2v4M2 8h20" />
                   </svg>
                 ),
-                desc: "Robust, scalable web applications tailored to your needs."
+                desc: "Robust, scalable web applications tailored to your needs.",
+                href: "/offers/web-app-development"
               },
               {
                 title: "Responsive Websites",
@@ -108,14 +112,20 @@ const HomePage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 2v4M16 2v4M2 8h20" />
                   </svg>
                 ),
-                desc: "Beautiful, mobile-friendly websites for every device."
+                desc: "Beautiful, mobile-friendly websites for every device.",
+                href: "/offers/responsive-websites"
               }
             ].map((service, idx) => (
-              <div key={idx} className="bg-slate-800/80 rounded-lg p-8 text-center shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-2">
+              <Link
+                key={idx}
+                href={service.href}
+                className="bg-slate-800/80 rounded-lg p-8 text-center shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                style={{ textDecoration: 'none', display: 'block' }}
+              >
                 <div>{service.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                 <p className="text-slate-400">{service.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
