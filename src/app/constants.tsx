@@ -3,6 +3,7 @@ import React from 'react';
 import { Project, ProjectCategory, TeamMember, ProcessStep } from './types';
 
 export const NAV_LINKS = [
+  { name: 'Home', href: '/' },
   { name: 'Projects', href: '/projects' },
   { name: 'Games', href: '/games' },
   { name: 'Process', href: '/#process' },
