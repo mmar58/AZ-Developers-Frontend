@@ -80,8 +80,7 @@ export const PROJECTS: Project[] = [
     description: 'Play classic Tic Tac Toe against a friend on your browser!',
     category: ProjectCategory.WEB_GAMES,
     imageUrl: 'https://picsum.photos/seed/tictactoe/600/400',
-    demoUrl: '/games/tic-tac-toe',
-    demoUrl: '#',
+    demoUrl: '/games/tic-tac-toe'
   },
   {
     id: 9,
@@ -97,6 +96,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 1,
     name: 'Alex Johnson',
+    username: 'alex-johnson',
     role: 'Lead Unity Developer',
     imageUrl: 'https://picsum.photos/seed/alex/400/400',
     bio: "A seasoned game developer with over a decade of experience in the Unity engine. Alex specializes in gameplay mechanics, performance optimization, and leading development teams from concept to launch. He's passionate about creating immersive and unforgettable gaming experiences.",
@@ -115,6 +115,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 2,
     name: 'Brenda Smith',
+    username: 'brenda-smith',
     role: 'Senior Frontend Engineer',
     imageUrl: 'https://picsum.photos/seed/brenda/400/400',
     bio: "Brenda is a creative frontend developer who excels at building beautiful, responsive, and highly interactive user interfaces. With a keen eye for design and a mastery of modern web technologies, she turns complex requirements into elegant solutions.",
@@ -133,6 +134,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 3,
     name: 'Carlos Rivera',
+    username: 'carlos-rivera',
     role: 'Backend & DevOps',
     imageUrl: 'https://picsum.photos/seed/carlos/400/400',
     bio: "Carlos is the backbone of our operations, ensuring our applications are scalable, secure, and always online. He has deep expertise in cloud infrastructure, database management, and building robust APIs that power our games and web apps.",
@@ -150,6 +152,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 4,
     name: 'Diana Chen',
+    username: 'diana-chen',
     role: 'UI/UX Designer',
     imageUrl: 'https://picsum.photos/seed/diana/400/400',
     bio: "Diana believes that great design is about solving problems. She combines user research, wireframing, and visual design to create intuitive and delightful experiences for our players and users. Her work is central to making our products not just functional, but enjoyable.",

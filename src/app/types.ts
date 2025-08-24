@@ -20,6 +20,7 @@ export interface Project {
 export interface TeamMember {
   id: number;
   name: string;
+  username: string; // Added for dynamic URL routing
   role: string;
   imageUrl: string;
   bio: string;
